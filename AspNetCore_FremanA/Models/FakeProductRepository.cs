@@ -18,5 +18,10 @@ namespace AspNetCore_FremanA.Models
         {
             throw new NotImplementedException();
         }
+
+        public Product DeleteProduct(int productId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
