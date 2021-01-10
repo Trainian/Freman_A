@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AspNetCore_FremanA.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AspNetCore_FremanA.Controllers
@@ -18,8 +19,10 @@ namespace AspNetCore_FremanA.Controllers
             cart = cartService;
         }
 
+        [Authorize]
         public IActionResult List() => View(repository.Orders.Where(o => !o.Shipped));
 
+        [Authorize]
         [HttpPost]
         public IActionResult MarkShipped(int orderID)
         {
